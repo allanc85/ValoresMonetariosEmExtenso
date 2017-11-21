@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValoresMonetariosEmExtenso", "ValoresMonetariosEmExtenso\ValoresMonetariosEmExtenso.csproj", "{9F7CAD50-C234-43F3-914B-A3E9A8BCA9D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValoresMonetariosEmExtensoTestes", "ValoresMonetariosEmExtenso\ValoresMonetariosEmExtensoTestes.csproj", "{9F7CAD50-C234-43F3-914B-A3E9A8BCA9D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterValoresMonetariosEmExtenso", "ConverterValoresMonetariosEmExtenso\ConverterValoresMonetariosEmExtenso.csproj", "{B44364A3-6E68-4B1B-8EAA-CBAEE93B7CA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9F7CAD50-C234-43F3-914B-A3E9A8BCA9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F7CAD50-C234-43F3-914B-A3E9A8BCA9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F7CAD50-C234-43F3-914B-A3E9A8BCA9D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B44364A3-6E68-4B1B-8EAA-CBAEE93B7CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B44364A3-6E68-4B1B-8EAA-CBAEE93B7CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B44364A3-6E68-4B1B-8EAA-CBAEE93B7CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B44364A3-6E68-4B1B-8EAA-CBAEE93B7CA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
