@@ -117,7 +117,6 @@ namespace ConverterValoresMonetariosEmExtenso
                 return "Zero";
             }
 
-
             decimal valorInteiro = Math.Truncate(decNum < 0 ? decNum * -1 : decNum);
             decimal resto = decNum < 0 ? ( decNum % 1 ) * -100 : ( decNum % 1 ) * 100;
 

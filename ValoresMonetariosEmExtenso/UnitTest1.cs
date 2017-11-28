@@ -4,7 +4,7 @@ using Xunit;
 
 namespace ValoresMonetariosEmExtenso
 {
-    public class TestesNumerosPositivosEInteirosMenoresQue1000
+    public class TestesNumerosPositivosInteirosAte999
     {
         [Fact(DisplayName = "#1:  42,00 deve ser Quarenta e dois reais")]
         public void DeveRetornarQuarentaDois()
@@ -41,14 +41,14 @@ namespace ValoresMonetariosEmExtenso
             Assert.Equal("Valor Inválido", result);
         }
 
-        [Fact(DisplayName = "-0.57 deve ser Cinquenta e sete centavos negativo")]
+        [Fact(DisplayName = "-0.57 deve ser Valor Inválido")]
         public void DeveRetornarCinquentaSeteCentavosNegativo()
         {
             var result = Program.ConverterInteiroPositivo(-0.57m);
             Assert.Equal("Valor Inválido", result);
         }
 
-        [Fact(DisplayName = "-0.93 deve ser Noventa e três centavos negativo")]
+        [Fact(DisplayName = "-0.93 deve ser Valor Inválido")]
         public void DeveRetornarNoventaTresCentavosNegativo()
         {
             var result = Program.ConverterInteiroPositivo(-0.93m);
