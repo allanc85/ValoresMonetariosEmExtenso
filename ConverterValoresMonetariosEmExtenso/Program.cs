@@ -76,6 +76,11 @@ namespace ConverterValoresMonetariosEmExtenso
             return decNum == 1 ? input + " real" : input + " reais";
         }
 
+        public static string InserirCentavos(this string input, decimal decNum)
+        {
+            return decNum == 1 ? input + " centavo" : input + " centavos";
+        }
+
         public static string ConverterDecimal(decimal decNum)
         {
             foreach (var baseDec in valoresBase)
@@ -89,7 +94,7 @@ namespace ConverterValoresMonetariosEmExtenso
             return "";
         }
 
-        public static string Converter(decimal decNum)
+        public static string ConverterInteiroPositivo(decimal decNum)
         {
             // Não aceita valores decimais (centavos), negativo e superiores a 999,00
             if (decNum % 1 != 0 || decNum < 0 || decNum >= 1000)
@@ -98,6 +103,36 @@ namespace ConverterValoresMonetariosEmExtenso
             }
 
             return ConverterDecimal(decNum).FirstCharToUpper().InserirMoeda(decNum);
+        }
+
+        public static string ConverterNegativoPositivoFracao(decimal decNum)
+        {
+            // Não aceita valores menores que 999,99 e superiores a 999,99
+            if (decNum <= -1000 || decNum >= 1000)
+            {
+                return "Valor Inválido";
+            }
+            if (decNum == 0.00m)
+            {
+                return "Zero";
+            }
+
+
+            decimal valorInteiro = Math.Truncate(decNum < 0 ? decNum * -1 : decNum);
+            decimal resto = decNum < 0 ? ( decNum % 1 ) * -100 : ( decNum % 1 ) * 100;
+
+            // Valor inteiro
+            string strMoeda = valorInteiro >= 1 ? ConverterDecimal(valorInteiro).InserirMoeda(valorInteiro) : "";
+
+            // Valor dos centavos
+            string strCentavo = resto == 0 ? "" : ConverterDecimal(resto).InserirCentavos(resto);
+            strCentavo = ( strMoeda != "" && strCentavo != "" ) ? " e " + strCentavo : strCentavo;
+
+            // Valor negativo
+            string strNegativo = decNum < 0 ? " negativo" : "";
+
+            return ( strMoeda + strCentavo + strNegativo ).FirstCharToUpper();
+
         }
     }
 }
